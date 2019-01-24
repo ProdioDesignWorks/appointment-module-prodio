@@ -1,1 +1,130 @@
+
 # appointment-module-prodio
+
+`appointment-module-prodio` is an  node js client for the  `appointment-services-prodio API`. 
+
+
+# Prerequisite (Things to do before installing this module):
+ * Clone its dependency repository first on your server git clone https://github.com/ProdioDesignWorks/appointment-services-prodio.git
+ * Navigate to your repo cd appointment-services-prodio
+ * Install dependencies npm install
+ * Start service node . or npm start or node server/server.js
+ * Open http://localhost:3030/explorer/ in your browser
+ * If you've pm2 installed then use this pm2 start server/server.js --name="APPOINTMENT_SERVICE"
+ * When you install `appointment-module-prodio`, it will ask question for the BASE_URL of this `APPOINTMENT_SERVICE` - eventually.
+
+
+
+# Features!
+  
+### Functions
+
+* Add/Edit Business Site
+
+* Add/Edit Services
+
+* Add/Edit Service Providers
+
+* Add/Edit Clients
+
+* Book Appointment
+
+* Reschedule Appointment
+
+* Cancel Appointment
+
+* Edit Appointment
+
+* List Appointments
+
+* Search/Filter Appointments
+
+* TimeSlot Settings
+ 
+
+# Installation
+
+$ npm install appointment-module-prodio@latest --save
+
+  
+# Initialization 
+Require the appointment-module-prodio module and initialize the appointment npm module client.
+```JSX
+
+ const appointmentClass = require('appointment-module-prodio');
+ const appointmentObj = new appointmentClass(BASE_URL); //BASE_URL => is the url where its loopback apis are running. eg.
+ ``` 
+
+
+### Method
+
+`1. ADD BUSINESS SITE:`
+
+ 	This will register subscriber as merchant into the given payment gateway.
+
+
+### Payload
+
+| Key | Type | Value | Description | Required |
+| --- | ---- | ----- | ----------- | -------- |
+| `action` | string | `ADD_BUSINESS_SITE` | key which defines the type of action to be performed | YES |
+| `meta` | json | [SAMPLE_META_INFO](/jsons/add_business_site.json) | Json having business details. | YES |
+
+
+#### Example
+
+```JSX
+	const payload = {
+	    "action": "ADD_BUSINESS_SITE",
+	    "meta": SAMPLE_META_INFO
+	};
+	//create business in appointment module
+	paymentObj.execute(payload, function(response) {
+	    if (typeof response == "string" || typeof response === "string") {
+	        response = JSON.parse(response);
+	    }
+
+	    if (!isNull(response.data)) {
+	        let serverResponse = response["data"];
+	        if (typeof serverResponse == "string" || typeof serverResponse === "string") {
+	            serverResponse = JSON.parse(response["data"]);
+	        }
+
+	        if (!isNull(serverResponse.error)) {
+	            //Error Response
+	            return cb(new HttpErrors.InternalServerError(response.data.error.message, {
+	                expose: false
+	            }));
+	        } else {
+	            // HTTP : 200 , Success Response , Merchant Successfully Created!!
+	            return cb(null, response.data);
+	        }
+	    } else {
+	        if (!isNull(response["response"])) {
+	            let serverResponse = response["response"]["data"];
+	            if (typeof serverResponse == "string" || typeof serverResponse === "string") {
+	                serverResponse = JSON.parse(response["response"]["data"]);
+	            }
+
+	            let serverResponseError = serverResponse["error"];
+	            if (typeof serverResponseError == "string" || typeof serverResponseError === "string") {
+	                serverResponseError = JSON.parse(serverResponseError["error"]);
+	            }
+
+	            let _msg = isNull(serverResponseError["message"]) ? 'Internal Server Error' : serverResponseError["message"];
+
+	            //Error Response
+	            return cb(new HttpErrors.InternalServerError(_msg, {
+	                expose: false
+	            }));
+	        } else {
+	            let _msg = isNull(response["data"]["message"]) ? 'Internal Server Error' : response["data"]["message"];
+
+	            //Error Response
+	            return cb(new HttpErrors.InternalServerError(_msg, {
+	                expose: false
+	            }));
+	        }
+	    }
+	});
+```

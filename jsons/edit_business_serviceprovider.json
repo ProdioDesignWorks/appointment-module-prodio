@@ -1,0 +1,9 @@
+{
+	"bizSiteId":"{{YOUR_SITE_ID}}",
+    "bizServiceProviderId":"{{YOUR_SERVICE_ID}}",
+    "firstName":"",
+	"lastName":"",
+	"email":"",
+	"mobileNumber":"",
+	"metaData":{}
+}

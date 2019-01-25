@@ -60,14 +60,14 @@ Require the appointment-module-prodio module and initialize the appointment npm 
 
 `1. ADD BUSINESS SITE:`
 
- 	This will register subscriber as merchant into the given payment gateway.
+ 	This will create new business site.
 
 
 ### Payload
 
 | Key | Type | Value | Description | Required |
 | --- | ---- | ----- | ----------- | -------- |
-| `action` | string | `ADD_BUSINESS_SITE` | key which defines the type of action to be performed | YES |
+| `action` | string | `ADD_BIZ_SITE` | key which defines the type of action to be performed | YES |
 | `meta` | json | [SAMPLE_META_INFO](/jsons/add_business_site.json) | Json having business details. | YES |
 
 
@@ -128,3 +128,95 @@ Require the appointment-module-prodio module and initialize the appointment npm 
 	    }
 	});
 ```
+
+`2. EDIT BUSINESS SITE:`
+
+ 	This will edit the business site.
+
+
+### Payload
+
+| Key | Type | Value | Description | Required |
+| --- | ---- | ----- | ----------- | -------- |
+| `action` | string | `EDIT_BIZ_SITE` | key which defines the type of action to be performed | YES |
+| `meta` | json | [SAMPLE_META_INFO](/jsons/edit_business_site.json) | Json having business details. | YES |
+
+
+`3. ADD BUSINESS SERVICE:`
+
+ 	This will create new service provided by business site.
+
+
+### Payload
+
+| Key | Type | Value | Description | Required |
+| --- | ---- | ----- | ----------- | -------- |
+| `action` | string | `ADD_BIZ_SERVICE` | key which defines the type of action to be performed | YES |
+| `meta` | json | [SAMPLE_META_INFO](/jsons/add_business_service.json) | Json having business details. | YES |
+
+
+`4. EDIT BUSINESS SERVICE:`
+
+ 	This will create new service provided by business site.
+
+
+### Payload
+
+| Key | Type | Value | Description | Required |
+| --- | ---- | ----- | ----------- | -------- |
+| `action` | string | `EDIT_BIZ_SERVICE` | key which defines the type of action to be performed | YES |
+| `meta` | json | [SAMPLE_META_INFO](/jsons/edit_business_service.json) | Json having business details. | YES |
+
+
+`5. ADD BUSINESS SERVICE PROVIDER:`
+
+ 	This will create new service provided by business site.
+
+
+### Payload
+
+| Key | Type | Value | Description | Required |
+| --- | ---- | ----- | ----------- | -------- |
+| `action` | string | `ADD_BIZ_SERVICEPROVIDER` | key which defines the type of action to be performed | YES |
+| `meta` | json | [SAMPLE_META_INFO](/jsons/add_business_serviceprovider.json) | Json having business details. | YES |
+
+
+`6. EDIT BUSINESS SERVICE PROVIDER:`
+
+ 	This will create new service provided by business site.
+
+
+### Payload
+
+| Key | Type | Value | Description | Required |
+| --- | ---- | ----- | ----------- | -------- |
+| `action` | string | `EDIT_BIZ_SERVICEPROVIDER` | key which defines the type of action to be performed | YES |
+| `meta` | json | [SAMPLE_META_INFO](/jsons/edit_business_serviceprovider.json) | Json having business details. | YES |
+
+
+`7. ADD BUSINESS CLIENT:`
+
+ 	This will create new client for business site.
+
+
+### Payload
+
+| Key | Type | Value | Description | Required |
+| --- | ---- | ----- | ----------- | -------- |
+| `action` | string | `ADD_BIZ_CLIENT` | key which defines the type of action to be performed | YES |
+| `meta` | json | [SAMPLE_META_INFO](/jsons/add_business_client.json) | Json having business details. | YES |
+
+
+`8. EDIT BUSINESS CLIENT:`
+
+ 	This will create new client for business site.
+
+
+### Payload
+
+| Key | Type | Value | Description | Required |
+| --- | ---- | ----- | ----------- | -------- |
+| `action` | string | `EDIT_BIZ_CLIENT` | key which defines the type of action to be performed | YES |
+| `meta` | json | [SAMPLE_META_INFO](/jsons/edit_business_client.json) | Json having business details. | YES |
+
+

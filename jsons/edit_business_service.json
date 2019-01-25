@@ -1,0 +1,11 @@
+{
+	"bizSiteId":"{{YOUR_SITE_ID}}",
+    "bizServiceId":"{{YOUR_SERVICE_ID}}",
+    "serviceName":"",
+    "serviceDescription":"",
+    "serviceDuration":"",
+    "serviceFees":"",
+    "serviceCoverImageUrl":"",
+    "serviceImages":["",""],
+    "metaData":{}
+}

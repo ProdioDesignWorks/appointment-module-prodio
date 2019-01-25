@@ -220,3 +220,55 @@ Require the appointment-module-prodio module and initialize the appointment npm 
 | `meta` | json | [SAMPLE_META_INFO](/jsons/edit_business_client.json) | Json having business details. | YES |
 
 
+`9. LIST CLIENTS:`
+
+ 	This will create new client for business site.
+
+
+### Payload
+
+| Key | Type | Value | Description | Required |
+| --- | ---- | ----- | ----------- | -------- |
+| `action` | string | `LIST_BIZ_CLIENTS` | key which defines the type of action to be performed | YES |
+| `meta` | json | [SAMPLE_META_INFO](/jsons/list_business_clients.json) | Json having business details. | YES |
+
+
+`10. REMOVE CLIENTS FROM SITE:`
+
+ 	This will create new client for business site.
+
+
+### Payload
+
+| Key | Type | Value | Description | Required |
+| --- | ---- | ----- | ----------- | -------- |
+| `action` | string | `REMOVE_BIZ_CLIENTS` | key which defines the type of action to be performed | YES |
+| `meta` | json | [SAMPLE_META_INFO](/jsons/remove_business_clients.json) | Json having business details. | YES |
+
+
+`11. LIST SERVICE PROVIDERS:`
+
+ 	This will create new client for business site.
+
+
+### Payload
+
+| Key | Type | Value | Description | Required |
+| --- | ---- | ----- | ----------- | -------- |
+| `action` | string | `LIST_BIZ_SERVICEPROVIDERS` | key which defines the type of action to be performed | YES |
+| `meta` | json | [SAMPLE_META_INFO](/jsons/list_business_clients.json) | Json having business details. | YES |
+
+
+`12. REMOVE SERVICE PROVIDERS FROM SITE:`
+
+ 	This will create new client for business site.
+
+
+### Payload
+
+| Key | Type | Value | Description | Required |
+| --- | ---- | ----- | ----------- | -------- |
+| `action` | string | `REMOVE_BIZ_SERVICEPROVIDERS` | key which defines the type of action to be performed | YES |
+| `meta` | json | [SAMPLE_META_INFO](/jsons/remove_business_clients.json) | Json having business details. | YES |
+
+

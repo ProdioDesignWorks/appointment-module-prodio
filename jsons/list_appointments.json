@@ -1,0 +1,5 @@
+{
+    "bizSiteId":"",
+    "bizClientId":"", /* (optional, when you only need particular client appointments) */
+    "pageNo":0
+}

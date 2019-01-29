@@ -1,0 +1,20 @@
+{
+    "bizSiteId":"",
+    "bizClientId":"", 
+    "appointmentId":"", 
+    "appointmentDate":"",
+    "appointmentStartTime":"",
+    "appointmentEndTime":"",
+    "totalAmount":"",
+    "amountPaid":"",
+    "amountDue":"",
+    "paymentStatus":"PENDING",
+    "confirmationStatus":"",
+    "metaData":{},
+    "services":[
+        {
+            "serviceId":"", /* ( biz service id) */
+            "serviceProviderId":"" /* ( biz service provider id) */
+        }
+    ]
+}

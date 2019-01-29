@@ -272,3 +272,120 @@ Require the appointment-module-prodio module and initialize the appointment npm 
 | `meta` | json | [SAMPLE_META_INFO](/jsons/remove_business_clients.json) | Json having business details. | YES |
 
 
+`13. BOOK APPOINTMENT:`
+
+ 	This will create new appointment for business site.
+
+
+### Payload
+
+| Key | Type | Value | Description | Required |
+| --- | ---- | ----- | ----------- | -------- |
+| `action` | string | `BOOK_APPOINTMENT` | key which defines the type of action to be performed | YES |
+| `meta` | json | [SAMPLE_META_INFO](/jsons/book_appointment.json) | Json having business details. | YES |
+
+
+`14. EDIT APPOINTMENT:`
+
+ 	This will edit appointment for business site.
+
+
+### Payload
+
+| Key | Type | Value | Description | Required |
+| --- | ---- | ----- | ----------- | -------- |
+| `action` | string | `EDIT_APPOINTMENT` | key which defines the type of action to be performed | YES |
+| `meta` | json | [SAMPLE_META_INFO](/jsons/edit_appointment.json) | Json having business details. | YES |
+
+
+`15. RESCHEDULE APPOINTMENT:`
+
+ 	This will edit appointment for business site.
+
+
+### Payload
+
+| Key | Type | Value | Description | Required |
+| --- | ---- | ----- | ----------- | -------- |
+| `action` | string | `RESCHEDULE_APPOINTMENT` | key which defines the type of action to be performed | YES |
+| `meta` | json | [SAMPLE_META_INFO](/jsons/reschedule_appointment.json) | Json having business details. | YES |
+
+
+`16. CANCEL APPOINTMENT:`
+
+ 	This will edit appointment for business site.
+
+
+### Payload
+
+| Key | Type | Value | Description | Required |
+| --- | ---- | ----- | ----------- | -------- |
+| `action` | string | `CANCEL_APPOINTMENT` | key which defines the type of action to be performed | YES |
+| `meta` | json | [SAMPLE_META_INFO](/jsons/cancel_appointment.json) | Json having business details. | YES |
+
+
+`17. DELETE APPOINTMENT:`
+
+ 	This will edit appointment for business site.
+
+
+### Payload
+
+| Key | Type | Value | Description | Required |
+| --- | ---- | ----- | ----------- | -------- |
+| `action` | string | `DELETE_APPOINTMENT` | key which defines the type of action to be performed | YES |
+| `meta` | json | [SAMPLE_META_INFO](/jsons/delete_appointment.json) | Json having business details. | YES |
+
+
+`18. CONFIRM APPOINTMENT:`
+
+ 	This will edit appointment for business site.
+
+
+### Payload
+
+| Key | Type | Value | Description | Required |
+| --- | ---- | ----- | ----------- | -------- |
+| `action` | string | `CONFIRM_APPOINTMENT` | key which defines the type of action to be performed | YES |
+| `meta` | json | [SAMPLE_META_INFO](/jsons/confirm_appointment.json) | Json having business details. | YES |
+
+
+`19. LIST APPOINTMENTS:`
+
+ 	This will edit appointment for business site.
+
+
+### Payload
+
+| Key | Type | Value | Description | Required |
+| --- | ---- | ----- | ----------- | -------- |
+| `action` | string | `LIST_APPOINTMENTS` | key which defines the type of action to be performed | YES |
+| `meta` | json | [SAMPLE_META_INFO](/jsons/list_appointments.json) | Json having business details. | YES |
+
+
+`20. GET SERVICE PROVIDER CALENDAR:`
+
+ 	This will edit appointment for business site.
+
+
+### Payload
+
+| Key | Type | Value | Description | Required |
+| --- | ---- | ----- | ----------- | -------- |
+| `action` | string | `GET_SERVICEPROVIDERS_CALENDAR` | key which defines the type of action to be performed | YES |
+| `meta` | json | [SAMPLE_META_INFO](/jsons/get_serviceproviders_calendar.json) | Json having business details. | YES |
+
+
+`21. GET APPOINTMENTS CALENDAR:`
+
+ 	This will edit appointment for business site.
+
+
+### Payload
+
+| Key | Type | Value | Description | Required |
+| --- | ---- | ----- | ----------- | -------- |
+| `action` | string | `GET_APPOINTMENTS_CALENDAR` | key which defines the type of action to be performed | YES |
+| `meta` | json | [SAMPLE_META_INFO](/jsons/get_appointments_calendar.json) | Json having business details. | YES |
+
+

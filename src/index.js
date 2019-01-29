@@ -66,6 +66,33 @@ function appointmentServices(BASE_URL) {
         case "REMOVE_BIZ_SERVICEPROVIDERS":
           return funRemoveBizServiceProviders(BASE_URL,payload,callback);
         break;
+        case "BOOK_APPOINTMENT":
+          return funBookAppointment(BASE_URL,payload,callback);
+        break;
+        case "EDIT_APPOINTMENT":
+          return funEditAppointment(BASE_URL,payload,callback);
+        break;
+        case "RESCHEDULE_APPOINTMENT":
+          return funRescheuldeAppointment(BASE_URL,payload,callback);
+        break;
+        case "CANCEL_APPOINTMENT":
+          return funCancelAppointment(BASE_URL,payload,callback);
+        break;
+        case "DELETE_APPOINTMENT":
+          return funDeleteAppointment(BASE_URL,payload,callback);
+        break;
+        case "CONFIRM_APPOINTMENT":
+          return funConfirmAppointment(BASE_URL,payload,callback);
+        break;
+        case "LIST_APPOINTMENTS":
+          return funListAppointments(BASE_URL,payload,callback);
+        break;
+        case "GET_SERVICEPROVIDERS_CALENDAR":
+          return funGetServiceProvidersCalendar(BASE_URL,payload,callback);
+        break;
+        case "GET_APPOINTMENTS_CALENDAR":
+          return funGetAppointmentsCalendar(BASE_URL,payload,callback);
+        break;
         default:
           let errorMessage = `Please add BaseUrl.`;
           return errorMessage;
@@ -296,6 +323,208 @@ const funRemoveBizServiceProviders = function (BASE_URL,payload,callback) {
 
 
   let url = `${BASE_URL}BizServiceProviders/removeServiceProviderFromSite?businessSiteId=${bizSiteId}&businessProviderIds=${businessProviderIds}`;
+  axios.post(url, payload).then(response => {
+    console.log(response)
+    return callback(response);
+  })
+  .catch((error) => {
+    let json = stringify(error);
+    return callback(json);
+  });
+}
+
+
+const funBookAppointment = function (BASE_URL,payload,callback) {
+  let bizSiteId = payload["bizSiteId"];
+  if (isNull(bizSiteId)) {
+    return callback(new HttpErrors.BadRequest('bizSiteId is mandatory.', { expose: false }));
+  }
+
+  let bizClientId = payload["bizClientId"];
+  if (isNull(bizClientId)) {
+    return callback(new HttpErrors.BadRequest('bizClientId is mandatory.', { expose: false }));
+  }
+
+
+  let url = `${BASE_URL}BizAppointments/createAppointment?businessSiteId=${bizSiteId}`;
+  axios.post(url, payload).then(response => {
+    console.log(response)
+    return callback(response);
+  })
+  .catch((error) => {
+    let json = stringify(error);
+    return callback(json);
+  });
+}
+
+
+const funEditAppointment = function (BASE_URL,payload,callback) {
+  let bizSiteId = payload["bizSiteId"];
+  if (isNull(bizSiteId)) {
+    return callback(new HttpErrors.BadRequest('bizSiteId is mandatory.', { expose: false }));
+  }
+
+  let appointmentId = payload["appointmentId"];
+  if (isNull(appointmentId)) {
+    return callback(new HttpErrors.BadRequest('appointmentId is mandatory.', { expose: false }));
+  }
+
+
+  let url = `${BASE_URL}BizAppointments/editAppointment?appointmentId=${appointmentId}`;
+  axios.post(url, payload).then(response => {
+    console.log(response)
+    return callback(response);
+  })
+  .catch((error) => {
+    let json = stringify(error);
+    return callback(json);
+  });
+}
+
+const funRescheuldeAppointment = function (BASE_URL,payload,callback) {
+  let bizSiteId = payload["bizSiteId"];
+  if (isNull(bizSiteId)) {
+    return callback(new HttpErrors.BadRequest('bizSiteId is mandatory.', { expose: false }));
+  }
+
+  let appointmentId = payload["appointmentId"];
+  if (isNull(appointmentId)) {
+    return callback(new HttpErrors.BadRequest('appointmentId is mandatory.', { expose: false }));
+  }
+
+
+  let url = `${BASE_URL}BizAppointments/rescheduleAppointment?appointmentId=${appointmentId}`;
+  axios.post(url, payload).then(response => {
+    console.log(response)
+    return callback(response);
+  })
+  .catch((error) => {
+    let json = stringify(error);
+    return callback(json);
+  });
+}
+
+
+const funCancelAppointment = function (BASE_URL,payload,callback) {
+
+  let appointmentId = payload["appointmentId"];
+  if (isNull(appointmentId)) {
+    return callback(new HttpErrors.BadRequest('appointmentId is mandatory.', { expose: false }));
+  }
+
+
+  let url = `${BASE_URL}BizAppointments/cancelAppointment?appointmentId=${appointmentId}`;
+  axios.post(url, payload).then(response => {
+    console.log(response)
+    return callback(response);
+  })
+  .catch((error) => {
+    let json = stringify(error);
+    return callback(json);
+  });
+}
+
+const funDeleteAppointment = function (BASE_URL,payload,callback) {
+
+  let appointmentId = payload["appointmentId"];
+  if (isNull(appointmentId)) {
+    return callback(new HttpErrors.BadRequest('appointmentId is mandatory.', { expose: false }));
+  }
+
+
+  let url = `${BASE_URL}BizAppointments/deleteAppointment?appointmentId=${appointmentId}`;
+  axios.post(url, payload).then(response => {
+    console.log(response)
+    return callback(response);
+  })
+  .catch((error) => {
+    let json = stringify(error);
+    return callback(json);
+  });
+}
+
+const funConfirmAppointment = function (BASE_URL,payload,callback) {
+
+  let appointmentId = payload["appointmentId"];
+  if (isNull(appointmentId)) {
+    return callback(new HttpErrors.BadRequest('appointmentId is mandatory.', { expose: false }));
+  }
+
+
+  let url = `${BASE_URL}BizAppointments/confirmAppointment?appointmentId=${appointmentId}`;
+  axios.post(url, payload).then(response => {
+    console.log(response)
+    return callback(response);
+  })
+  .catch((error) => {
+    let json = stringify(error);
+    return callback(json);
+  });
+}
+
+
+const funListAppointments = function (BASE_URL,payload,callback) {
+
+  let bizSiteId = payload["bizSiteId"];
+  if (isNull(bizSiteId)) {
+    return callback(new HttpErrors.BadRequest('bizSiteId is mandatory.', { expose: false }));
+  }
+
+  let bizClientId = "";
+  if (!isNull(payload["bizClientId"])) {
+    bizClientId = payload["bizClientId"];
+  }
+
+  let pageNo = 0;
+  if (!isNull(payload["pageNo"])) {
+    pageNo = payload["pageNo"];
+  }
+
+
+  let url = `${BASE_URL}BizAppointments/listAppointments?businessSiteId=${bizSiteId}&bizClientId=${bizClientId}&pageNo=${pageNo}`;
+  axios.post(url, payload).then(response => {
+    console.log(response)
+    return callback(response);
+  })
+  .catch((error) => {
+    let json = stringify(error);
+    return callback(json);
+  });
+}
+
+
+const funGetServiceProvidersCalendar = function (BASE_URL,payload,callback) {
+
+  let bizSiteId = payload["bizSiteId"];
+  if (isNull(bizSiteId)) {
+    return callback(new HttpErrors.BadRequest('bizSiteId is mandatory.', { expose: false }));
+  }
+
+  let bizServiceProviderId = payload["bizServiceProviderId"];
+  if (isNull(bizServiceProviderId)) {
+    return callback(new HttpErrors.BadRequest('bizServiceProviderId is mandatory.', { expose: false }));
+  }
+
+  let url = `${BASE_URL}BizAppointments/getServiceProviderCalender?businessSiteId=${bizSiteId}&bizServiceProviderId=${bizServiceProviderId}`;
+  axios.post(url, payload).then(response => {
+    console.log(response)
+    return callback(response);
+  })
+  .catch((error) => {
+    let json = stringify(error);
+    return callback(json);
+  });
+}
+
+
+const funGetAppointmentsCalendar = function (BASE_URL,payload,callback) {
+
+  let bizSiteId = payload["bizSiteId"];
+  if (isNull(bizSiteId)) {
+    return callback(new HttpErrors.BadRequest('bizSiteId is mandatory.', { expose: false }));
+  }
+
+  let url = `${BASE_URL}BizAppointments/getAppointmentsCalender?businessSiteId=${bizSiteId}`;
   axios.post(url, payload).then(response => {
     console.log(response)
     return callback(response);

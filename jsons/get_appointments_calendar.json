@@ -1,0 +1,9 @@
+{
+    "bizSiteId":"",
+    "filterCriteria":{
+    	"appointmentStatus":"TODAY/PAST/COMPLETED/UPCOMING/CONFIRMED/UNCONFIRMED",
+    	"filterBy":"DAY / WEEK / MONTH",
+    	"startDate":"MM-DD-YYYY",
+    	"endDate":"MM-DD-YYYY"
+    }
+}

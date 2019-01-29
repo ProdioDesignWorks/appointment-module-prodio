@@ -1,0 +1,9 @@
+{
+    "bizSiteId":"",
+    "bizClientId":"", 
+    "appointmentId":"", 
+    "appointmentDate":"",
+    "appointmentStartTime":"",
+    "appointmentEndTime":"",
+    "metaData":{}
+}

@@ -1,0 +1,7 @@
+{
+    "bizSiteId":"",
+    "bizServiceProviderId":"", /* (optional, when you only need particular client appointments) */
+    "filterCriteria":{
+    	
+    }
+}

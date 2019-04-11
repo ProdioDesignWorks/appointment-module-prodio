@@ -120,7 +120,7 @@ const funAddEditBizSite = function (BASE_URL,payload,callback) {
 
   let url = `${BASE_URL}BizSites/createUpdateBusinessSite`;
   axios.post(url, payload).then(response => {
-    console.log(response)
+    //console.log(response)
     return callback(response);
   })
   .catch((error) => {
@@ -149,7 +149,6 @@ const funAddEditBizService = function (BASE_URL,payload,callback) {
 
   let url = `${BASE_URL}BizServices/addEditService?businessSiteId=${bizSiteId}`;
   axios.post(url, payload).then(response => {
-    console.log(response)
     return callback(response);
   })
   .catch((error) => {
@@ -178,7 +177,6 @@ const funAddEditBizServiceProvider = function (BASE_URL,payload,callback) {
 
   let url = `${BASE_URL}BizServiceProviders/addEditServiceProvider?businessSiteId=${bizSiteId}`;
   axios.post(url, payload).then(response => {
-    console.log(response)
     return callback(response);
   })
   .catch((error) => {
@@ -207,7 +205,6 @@ const funAddEditBizClient = function (BASE_URL,payload,callback) {
 
   let url = `${BASE_URL}BizClients/addEditClient?businessSiteId=${bizSiteId}`;
   axios.post(url, payload).then(response => {
-    console.log(response)
     return callback(response);
   })
   .catch((error) => {
@@ -235,7 +232,6 @@ const funListBizClients = function (BASE_URL,payload,callback) {
 
   let url = `${BASE_URL}BizClients/listClients?businessSiteId=${bizSiteId}&pageNo=${pageNo}`;
   axios.post(url, payload).then(response => {
-    console.log(response)
     return callback(response);
   })
   .catch((error) => {
@@ -265,7 +261,6 @@ const funRemoveBizClients = function (BASE_URL,payload,callback) {
 
   let url = `${BASE_URL}BizClients/removeClientFromSite?businessSiteId=${bizSiteId}&businessClientIds=${businessClientIds}`;
   axios.post(url, payload).then(response => {
-    console.log(response)
     return callback(response);
   })
   .catch((error) => {
@@ -294,7 +289,6 @@ const funListBizServiceProviders = function (BASE_URL,payload,callback) {
 
   let url = `${BASE_URL}BizServiceProviders/listServiceProviders?businessSiteId=${bizSiteId}&pageNo=${pageNo}`;
   axios.post(url, payload).then(response => {
-    console.log(response)
     return callback(response);
   })
   .catch((error) => {
@@ -324,7 +318,6 @@ const funRemoveBizServiceProviders = function (BASE_URL,payload,callback) {
 
   let url = `${BASE_URL}BizServiceProviders/removeServiceProviderFromSite?businessSiteId=${bizSiteId}&businessProviderIds=${businessProviderIds}`;
   axios.post(url, payload).then(response => {
-    console.log(response)
     return callback(response);
   })
   .catch((error) => {
@@ -348,7 +341,6 @@ const funBookAppointment = function (BASE_URL,payload,callback) {
 
   let url = `${BASE_URL}BizAppointments/createAppointment?businessSiteId=${bizSiteId}`;
   axios.post(url, payload).then(response => {
-    console.log(response)
     return callback(response);
   })
   .catch((error) => {
@@ -372,7 +364,6 @@ const funEditAppointment = function (BASE_URL,payload,callback) {
 
   let url = `${BASE_URL}BizAppointments/editAppointment?appointmentId=${appointmentId}`;
   axios.post(url, payload).then(response => {
-    console.log(response)
     return callback(response);
   })
   .catch((error) => {
@@ -395,7 +386,6 @@ const funRescheuldeAppointment = function (BASE_URL,payload,callback) {
 
   let url = `${BASE_URL}BizAppointments/rescheduleAppointment?appointmentId=${appointmentId}`;
   axios.post(url, payload).then(response => {
-    console.log(response)
     return callback(response);
   })
   .catch((error) => {
@@ -415,7 +405,6 @@ const funCancelAppointment = function (BASE_URL,payload,callback) {
 
   let url = `${BASE_URL}BizAppointments/cancelAppointment?appointmentId=${appointmentId}`;
   axios.post(url, payload).then(response => {
-    console.log(response)
     return callback(response);
   })
   .catch((error) => {
@@ -434,7 +423,6 @@ const funDeleteAppointment = function (BASE_URL,payload,callback) {
 
   let url = `${BASE_URL}BizAppointments/deleteAppointment?appointmentId=${appointmentId}`;
   axios.post(url, payload).then(response => {
-    console.log(response)
     return callback(response);
   })
   .catch((error) => {
@@ -453,7 +441,6 @@ const funConfirmAppointment = function (BASE_URL,payload,callback) {
 
   let url = `${BASE_URL}BizAppointments/confirmAppointment?appointmentId=${appointmentId}`;
   axios.post(url, payload).then(response => {
-    console.log(response)
     return callback(response);
   })
   .catch((error) => {
@@ -483,7 +470,6 @@ const funListAppointments = function (BASE_URL,payload,callback) {
 
   let url = `${BASE_URL}BizAppointments/listAppointments?businessSiteId=${bizSiteId}&bizClientId=${bizClientId}&pageNo=${pageNo}`;
   axios.post(url, payload).then(response => {
-    console.log(response)
     return callback(response);
   })
   .catch((error) => {
@@ -507,7 +493,6 @@ const funGetServiceProvidersCalendar = function (BASE_URL,payload,callback) {
 
   let url = `${BASE_URL}BizAppointments/getServiceProviderCalender?businessSiteId=${bizSiteId}&bizServiceProviderId=${bizServiceProviderId}`;
   axios.post(url, payload).then(response => {
-    console.log(response)
     return callback(response);
   })
   .catch((error) => {
@@ -526,7 +511,6 @@ const funGetAppointmentsCalendar = function (BASE_URL,payload,callback) {
 
   let url = `${BASE_URL}BizAppointments/getAppointmentsCalender?businessSiteId=${bizSiteId}`;
   axios.post(url, payload).then(response => {
-    console.log(response)
     return callback(response);
   })
   .catch((error) => {

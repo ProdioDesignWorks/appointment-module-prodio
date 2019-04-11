@@ -205,7 +205,7 @@ const funAddEditBizClient = function (BASE_URL,payload,callback) {
     return callback(new HttpErrors.BadRequest('bizClientId is mandatory.', { expose: false }));
   }
 
-  let url = `${BASE_URL}BizServiceProviders/addEditServiceProvider?businessSiteId=${bizSiteId}`;
+  let url = `${BASE_URL}BizClients/addEditClient?businessSiteId=${bizSiteId}`;
   axios.post(url, payload).then(response => {
     console.log(response)
     return callback(response);

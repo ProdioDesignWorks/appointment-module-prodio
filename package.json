@@ -1,6 +1,6 @@
 {
   "name": "appointment-module-prodio",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "NPM Module for Appointment Services",
   "main": "lib/index.js",
   "scripts": {
@@ -37,7 +37,8 @@
   "homepage": "https://github.com/ProdioDesignWorks/appointment-module-prodio#readme",
   "dependencies": {
     "axios": "^0.18.0",
-    "circular-json": "^0.5.9"
+    "flatted": "^2.0.0",
+    "http-errors": "^1.7.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

@@ -452,14 +452,18 @@ const funConfirmAppointment = function (BASE_URL,payload,callback) {
 
 const funListAppointments = function (BASE_URL,payload,callback) {
 
-  // let bizSiteId = payload["meta"]["bizSiteId"];
-  // if (isNull(bizSiteId)) {
-  //   return callback(new HttpErrors.BadRequest('bizSiteId is mandatory.', { expose: false }));
-  // }
+  let bizSiteId = "";
+  if (!isNull(payload["meta"]["bizSiteId"])) {
+    bizSiteId  = payload["meta"]["bizSiteId"];
+  }
 
   let bizClientId = "";
   if (!isNull(payload["meta"]["bizClientId"])) {
     bizClientId = payload["meta"]["bizClientId"];
+  }
+
+  if (isNull(bizClientId)) {
+    return callback(new HttpErrors.BadRequest('bizClientId is mandatory.', { expose: false }));
   }
 
   let pageNo = 0;

@@ -462,9 +462,6 @@ const funListAppointments = function (BASE_URL,payload,callback) {
     bizClientId = payload["meta"]["bizClientId"];
   }
 
-  if (isNull(bizClientId)) {
-    return callback(new HttpErrors.BadRequest('bizClientId is mandatory.', { expose: false }));
-  }
 
   let pageNo = 0;
   if (!isNull(payload["meta"]["pageNo"])) {

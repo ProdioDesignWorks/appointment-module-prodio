@@ -37,6 +37,8 @@
 
 * List Appointments
 
+* Get Appointment Details
+
 * Search/Filter Appointments
 
 * TimeSlot Settings
@@ -387,5 +389,19 @@ Require the appointment-module-prodio module and initialize the appointment npm 
 | --- | ---- | ----- | ----------- | -------- |
 | `action` | string | `GET_APPOINTMENTS_CALENDAR` | key which defines the type of action to be performed | YES |
 | `meta` | json | [SAMPLE_META_INFO](/jsons/get_appointments_calendar.json) | Json having business details. | YES |
+
+
+
+`22. GET APPOINTMENT DETAILS:`
+
+ 	This will give a appointment details for business site.
+
+
+### Payload
+
+| Key | Type | Value | Description | Required |
+| --- | ---- | ----- | ----------- | -------- |
+| `action` | string | `GET_APPOINTMENT_DETAILS` | key which defines the type of action to be performed | YES |
+| `meta` | json | [SAMPLE_META_INFO](/jsons/get_appointment_profile.json) | Json having business details. | YES |
 
 

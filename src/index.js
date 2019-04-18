@@ -75,6 +75,9 @@ function appointmentServices(BASE_URL) {
         case "RESCHEDULE_APPOINTMENT":
           return funRescheuldeAppointment(BASE_URL,payload,callback);
         break;
+        case "GET_APPOINTMENT_DETAILS":
+          return funGetAppointmentProfile(BASE_URL,payload,callback);
+        break;
         case "CANCEL_APPOINTMENT":
           return funCancelAppointment(BASE_URL,payload,callback);
         break;
@@ -519,6 +522,26 @@ const funGetAppointmentsCalendar = function (BASE_URL,payload,callback) {
     return callback(json);
   });
 }
+
+
+const funGetAppointmentProfile = function (BASE_URL,payload,callback) {
+
+  let appointmentId = payload["meta"]["appointmentId"];
+  if (isNull(appointmentId)) {
+    return callback(new HttpErrors.BadRequest('appointmentId is mandatory.', { expose: false }));
+  }
+
+  let url = `${BASE_URL}BizAppointments/getAppointmentDetails?appointmentId=${appointmentId}`;
+  axios.post(url, payload).then(response => {
+    return callback(response);
+  })
+  .catch((error) => {
+    let json = stringify(error);
+    return callback(json);
+  });
+}
+
+
 
 
 module.exports = appointmentServices;

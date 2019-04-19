@@ -1,6 +1,7 @@
 {
     "bizSiteId":"",
     "bizClientId":"", 
+    "appointmentName":"",
     "appointmentId":"", 
     "appointmentDate":"",
     "appointmentStartTime":"",

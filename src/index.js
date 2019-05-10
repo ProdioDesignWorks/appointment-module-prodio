@@ -471,8 +471,13 @@ const funListAppointments = function (BASE_URL,payload,callback) {
     pageNo = payload["meta"]["pageNo"];
   }
 
+  let timeframe = "";
+  if (!isNull(payload["meta"]["timeframe"])) {
+    timeframe = payload["meta"]["timeframe"];
+  }
 
-  let url = `${BASE_URL}BizAppointments/listAppointments?businessSiteId=${bizSiteId}&businessClientId=${bizClientId}&pageNo=${pageNo}`;
+
+  let url = `${BASE_URL}BizAppointments/listAppointments?businessSiteId=${bizSiteId}&businessClientId=${bizClientId}&pageNo=${pageNo}&timeframe=${timeframe}`;
   axios.post(url, payload).then(response => {
     return callback(response);
   })

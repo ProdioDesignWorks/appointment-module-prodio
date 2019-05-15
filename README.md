@@ -354,7 +354,7 @@ Require the appointment-module-prodio module and initialize the appointment npm 
 
 `19. LIST APPOINTMENTS:`
 
- 	This will edit appointment for business site.
+ 	This will list appointment for business site.
 
 
 ### Payload
@@ -365,7 +365,21 @@ Require the appointment-module-prodio module and initialize the appointment npm 
 | `meta` | json | [SAMPLE_META_INFO](/jsons/list_appointments.json) | Json having business details. | YES |
 
 
-`20. GET SERVICE PROVIDER CALENDAR:`
+`20. LIST APPOINTMENTS BY SERVICE:`
+
+ 	This will list appointment for business site of particular service.
+
+
+### Payload
+
+| Key | Type | Value | Description | Required |
+| --- | ---- | ----- | ----------- | -------- |
+| `action` | string | `LIST_APPOINTMENTS_BY_SERVICE` | key which defines the type of action to be performed | YES |
+| `meta` | json | [SAMPLE_META_INFO](/jsons/list_appointments_by_service.json) | Json having business details. | YES |
+
+
+
+`21. GET SERVICE PROVIDER CALENDAR:`
 
  	This will edit appointment for business site.
 
@@ -378,7 +392,7 @@ Require the appointment-module-prodio module and initialize the appointment npm 
 | `meta` | json | [SAMPLE_META_INFO](/jsons/get_serviceproviders_calendar.json) | Json having business details. | YES |
 
 
-`21. GET APPOINTMENTS CALENDAR:`
+`22. GET APPOINTMENTS CALENDAR:`
 
  	This will edit appointment for business site.
 
@@ -392,7 +406,7 @@ Require the appointment-module-prodio module and initialize the appointment npm 
 
 
 
-`22. GET APPOINTMENT DETAILS:`
+`23. GET APPOINTMENT DETAILS:`
 
  	This will give a appointment details for business site.
 

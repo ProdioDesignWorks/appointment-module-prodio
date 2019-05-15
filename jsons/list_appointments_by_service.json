@@ -1,0 +1,6 @@
+{
+    "bizSiteId":"",
+    "bizServiceId":"", /* (optional, when you only need particular client appointments) */
+    "pageNo":0,
+    "timeframe":"TODAY" /* optional - TODAY/UPCOMING/COMPLETED */
+}

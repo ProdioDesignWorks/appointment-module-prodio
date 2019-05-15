@@ -90,6 +90,9 @@ function appointmentServices(BASE_URL) {
         case "LIST_APPOINTMENTS":
           return funListAppointments(BASE_URL,payload,callback);
         break;
+        case "LIST_APPOINTMENTS_BY_SERVICE":
+          return funListAppointmentsByService(BASE_URL,payload,callback);
+        break;
         case "GET_SERVICEPROVIDERS_CALENDAR":
           return funGetServiceProvidersCalendar(BASE_URL,payload,callback);
         break;
@@ -443,6 +446,41 @@ const funConfirmAppointment = function (BASE_URL,payload,callback) {
 
 
   let url = `${BASE_URL}BizAppointments/confirmAppointment?appointmentId=${appointmentId}`;
+  axios.post(url, payload).then(response => {
+    return callback(response);
+  })
+  .catch((error) => {
+    let json = stringify(error);
+    return callback(json);
+  });
+}
+
+
+const funListAppointmentsByService = function (BASE_URL,payload,callback) {
+
+  let bizSiteId = "";
+  if (!isNull(payload["meta"]["bizSiteId"])) {
+    bizSiteId  = payload["meta"]["bizSiteId"];
+  }
+
+  let bizServiceId = "";
+  if (!isNull(payload["meta"]["bizServiceId"])) {
+    bizServiceId = payload["meta"]["bizServiceId"];
+  }
+
+
+  let pageNo = 0;
+  if (!isNull(payload["meta"]["pageNo"])) {
+    pageNo = payload["meta"]["pageNo"];
+  }
+
+  let timeframe = "";
+  if (!isNull(payload["meta"]["timeframe"])) {
+    timeframe = payload["meta"]["timeframe"];
+  }
+
+
+  let url = `${BASE_URL}BizAppointments/listAppointmentsByService?businessSiteId=${bizSiteId}&businessServiceId=${bizServiceId}&pageNo=${pageNo}&timeframe=${timeframe}`;
   axios.post(url, payload).then(response => {
     return callback(response);
   })

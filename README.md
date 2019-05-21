@@ -341,7 +341,7 @@ Require the appointment-module-prodio module and initialize the appointment npm 
 
 `18. CONFIRM APPOINTMENT:`
 
- 	This will edit appointment for business site.
+ 	This will mark confirm the appointment for business site.
 
 
 ### Payload
@@ -417,5 +417,18 @@ Require the appointment-module-prodio module and initialize the appointment npm 
 | --- | ---- | ----- | ----------- | -------- |
 | `action` | string | `GET_APPOINTMENT_DETAILS` | key which defines the type of action to be performed | YES |
 | `meta` | json | [SAMPLE_META_INFO](/jsons/get_appointment_profile.json) | Json having business details. | YES |
+
+
+`24. COMPLETE APPOINTMENT:`
+
+ 	This will mark complete appointment for business site.
+
+
+### Payload
+
+| Key | Type | Value | Description | Required |
+| --- | ---- | ----- | ----------- | -------- |
+| `action` | string | `COMPLETE_APPOINTMENT` | key which defines the type of action to be performed | YES |
+| `meta` | json | [SAMPLE_META_INFO](/jsons/complete_appointment.json) | Json having business details. | YES |
 
 

@@ -81,6 +81,9 @@ function appointmentServices(BASE_URL) {
         case "CANCEL_APPOINTMENT":
           return funCancelAppointment(BASE_URL,payload,callback);
         break;
+        case "COMPLETE_APPOINTMENT":
+          return funCompleteAppointment(BASE_URL,payload,callback);
+        break;
         case "DELETE_APPOINTMENT":
           return funDeleteAppointment(BASE_URL,payload,callback);
         break;
@@ -399,6 +402,25 @@ const funRescheuldeAppointment = function (BASE_URL,payload,callback) {
     return callback(json);
   });
 }
+
+const funCompleteAppointment = function (BASE_URL,payload,callback) {
+
+  let appointmentId = payload["meta"]["appointmentId"];
+  if (isNull(appointmentId)) {
+    return callback(new HttpErrors.BadRequest('appointmentId is mandatory.', { expose: false }));
+  }
+
+
+  let url = `${BASE_URL}BizAppointments/markCompleteAppointment?appointmentId=${appointmentId}`;
+  axios.post(url, payload).then(response => {
+    return callback(response);
+  })
+  .catch((error) => {
+    let json = stringify(error);
+    return callback(json);
+  });
+}
+
 
 
 const funCancelAppointment = function (BASE_URL,payload,callback) {

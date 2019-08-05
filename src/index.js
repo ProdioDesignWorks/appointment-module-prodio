@@ -536,8 +536,18 @@ const funListAppointments = function (BASE_URL,payload,callback) {
     timeframe = payload["meta"]["timeframe"];
   }
 
+  let _month = "";
+  if (!isNull(payload["meta"]["month"])) {
+    _month = payload["meta"]["month"];
+  }
 
-  let url = `${BASE_URL}BizAppointments/listAppointments?businessSiteId=${bizSiteId}&businessClientId=${bizClientId}&pageNo=${pageNo}&timeframe=${timeframe}`;
+  let _year = "";
+  if (!isNull(payload["meta"]["year"])) {
+    _year = payload["meta"]["year"];
+  }
+
+
+  let url = `${BASE_URL}BizAppointments/listAppointments?businessSiteId=${bizSiteId}&businessClientId=${bizClientId}&pageNo=${pageNo}&timeframe=${timeframe}&month=${_month}&year=${_year}`;
   axios.post(url, payload).then(response => {
     return callback(response);
   })

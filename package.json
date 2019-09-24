@@ -1,6 +1,6 @@
 {
   "name": "appointment-module-prodio",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "NPM Module for Appointment Services",
   "main": "lib/index.js",
   "scripts": {

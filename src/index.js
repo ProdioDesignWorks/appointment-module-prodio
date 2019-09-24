@@ -548,7 +548,7 @@ const funListAppointments = function (BASE_URL,payload,callback) {
 
   let source = "";
   if (!isNull(payload["meta"]["source"])) {
-    _year = payload["meta"]["source"];
+    source = payload["meta"]["source"];
   }
 
 
